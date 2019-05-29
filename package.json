@@ -1,0 +1,45 @@
+{
+  "name": "extension-hot-reload-master",
+  "version": "1.0.0",
+  "description": "现在在开发页面时，通过构建实现热加载已经很普遍。但是在开发扩展时，由于扩展的刷新和页面不同，所以需要对构建做一些特殊处理。本项目就是在开发扩展时，使沟通实现自动刷新的功能的构建模板。 代码中主要添加了以下几点： 1. 将webpack的构建结果输出到硬盘。（扩展调试需要引入一个目录） 2. entry在构建时确定。（Content Script个数不确定） 3. 在background.js中添加reload方法，通过监听message事件来自动刷新扩展。（修改代码后，自动刷新扩展）",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "7",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "copy-webpack-plugin": "^5.0.2",
+    "css-loader": "^2.1.0",
+    "css-selector-generator": "^1.2.0",
+    "events-trigger": "^1.2.5",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "fs-extra": "^8.0.1",
+    "ip": "^1.1.5",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "unique-selector": "^0.4.1",
+    "vue": "^2.6.8",
+    "vue-loader": "14.2.2",
+    "vue-template-compiler": "^2.6.8",
+    "webpack": "^4.29.6",
+    "webpack-dev-server": "^3.4.1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^2.0.1"
+  },
+  "scripts": {
+    "dev": "node ./tasks/webpack-dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sally2015/extension-hotupdate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sally2015/extension-hotupdate/issues"
+  },
+  "homepage": "https://github.com/sally2015/extension-hotupdate#readme"
+}
